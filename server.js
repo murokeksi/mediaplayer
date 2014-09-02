@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //var port = process.env.PORT || 8080;        // set our port
-    var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
+    var ipaddress = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
     var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 // ROUTES FOR OUR API
