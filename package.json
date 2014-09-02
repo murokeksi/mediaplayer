@@ -25,7 +25,8 @@
   },
 
   "dependencies": {
-    "express": "~4.8.0"
+    "express": "~3.4.4",
+    "body-parser": "~1.0.1"
   },
   "devDependencies": {},
   "bundleDependencies": [],
