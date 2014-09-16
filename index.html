@@ -1,19 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Fancy media player in Javascript</title>
 
-	<link rel="stylesheet" href="public/style.css">
-	<script src="public/mediaplayer.js"></script>
-	<title>mediaplayer</title>
-</head>
-<body>
-	<audio id="player"></audio>
-	<button id="btnPlay">Play</button>
-	<button id="btnPause">Pause</button>
-	<button id="btnStop">Stop</button>
-	<br />
-	<button id="btnVolUp">vol++</button>
-	<button id="btnVolDown">vol--</button>
-</body>
+        <link rel="stylesheet" href="public/style.css">
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    	<script src="public/mediaplayer.js"></script>
+
+    </head>
+
+    <body>
+        <div id="playList">
+    	   <p>This is the initial page content. <br />
+           The actual content will be loaded in <span id="initInterval"></span> seconds.</p>
+        </div>
+        <div id="playerView" style="visibility:hidden;">
+            <audio id="player"></audio>
+            <button id="btnPlay">Play</button>
+            <button id="btnPause">Pause</button>
+            <button id="btnStop">Stop</button>
+            <br />
+            <button id="btnVolDown">Vol--</button>
+            <button id="btnVolUp">Vol++</button>
+        </div>
+    	<script>
+    		window.onload = function() {
+                // Create mediaplayer object
+                myPlayer = new Mediaplayer();
+
+                var jqxhr = $.get( "api/", function() {
+                alert( "success" );
+                })
+                .done(function() {
+                alert( "second success" );
+                })
+                .fail(function() {
+                alert( "error" );
+                })
+                .always(function() {
+                alert( "finished" );
+                });
+                // Perform other work here ...
+                // Set another completion function for the request above
+                jqxhr.always(function() {
+                alert( "second finished" );
+                });
+
+            };
+    	</script>
+    </body>
 </html>
