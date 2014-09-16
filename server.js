@@ -37,10 +37,10 @@ router.get('/api', function(req, res) {
   var connectionString = 'mysql://' + process.env.OPENSHIFT_MYSQL_DB_URL || 
   						'mysql://root:test1234@localhost:3306'
   var connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : 'localhost',/*
     user     : 'root',
     password : 'test1234',
-    database : 'mediaplayer'
+    database : 'mediaplayer'*/
   });
 
   connection.connect();
