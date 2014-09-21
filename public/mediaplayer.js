@@ -1,21 +1,14 @@
 /* Create mediaplayer object */
 
-var Mediaplayer = function() {
+var Mediaplayer = function(arg1) {
 
 	var player = document.getElementById('player');
-
-	var playlist = ["http://opengameart.org/sites/default/files/Soliloquy_1.mp3",
-					"http://opengameart.org/sites/default/files/Arabesque.mp3",
-					"http://opengameart.org/sites/default/files/Gran%20Batalla.mp3",
-					"http://opengameart.org/sites/default/files/Carnegieo.ogg",
-					"http://opengameart.org/sites/default/files/Sigil_3.ogg",
-					"http://opengameart.org/sites/default/files/sadorchestralbgm%28syncopika%29.wav",
-					"http://opengameart.org/sites/default/files/catinspace_hq.mp3",
-					"public/media/Soliloquy_1.mp3"];
+	var playlist = ["Ebin tetters"];
+	playlist = arg1;
 
 	initMediaplayer();
 
-	// Create timer to show mediaplayer UI
+	/*// Create timer to show mediaplayer UI
 	var timeout = 1;
 
 	// Show the initial timeout
@@ -32,9 +25,8 @@ var Mediaplayer = function() {
 			// Show mediaplayer UI
 			showMediaplayer();
 		}
-	}, 1000);
-	
-
+	}, 1000); */
+	showMediaplayer();
 	function initMediaplayer() {
 		document.getElementById('btnPlay').addEventListener('click', playMusic, false);
 		document.getElementById('btnPause').addEventListener('click', pauseMusic, false);
@@ -59,15 +51,15 @@ var Mediaplayer = function() {
 			});
 
 			audio.addEventListener('loadstart', function() {
-				console.log("loadstart", this.src);
+				//console.log("loadstart", this.src);
 			});
 
 			audio.addEventListener('suspend', function() {
-				console.log("loadstart", this.src);
+				//console.log("loadstart", this.src);
 			});
 			
 			audio.addEventListener('progress', function() {
-				console.log("progress", this.src);
+				//console.log("progress", this.src);
 			});
 /*
 			audio.addEventListener('canplay', function() {
