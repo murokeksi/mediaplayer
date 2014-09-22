@@ -26,11 +26,11 @@ var Mediaplayer = function(playlist) {
 	}, 1000); */
 	showMediaplayer();
 	function initMediaplayer() {
-		document.getElementById('btnPlay').addEventListener('click', playMusic, false);
-		document.getElementById('btnPause').addEventListener('click', pauseMusic, false);
-		document.getElementById('btnStop').addEventListener('click', stopMusic, false);
-		document.getElementById('btnVolUp').addEventListener('click', volumeUp, false);
-		document.getElementById('btnVolDown').addEventListener('click', volumeDown, false);
+		 $("#btnPlay").click(playMusic);
+		 $("#btnPause").click(pauseMusic);
+		 $("#btnStop").click(stopMusic);
+		 $("#btnVolUp").click(volumeUp);
+		 $("#btnVolDown").click(volumeDown);
 	}
 
 	function showMediaplayer() {
