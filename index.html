@@ -44,13 +44,9 @@
 
             window.onload = function() {
                 // Create mediaplayer object
-
-
                 var jqxhr = $.get( "api/", function(data) {
                                         // TODO: show initial playlist
-
                 var playlist = data.playlist;
-
 
                     for(var song in playlist){
                     console.log("Adding song:", playlist[song].nimi + " by " + playlist[song].artisti);
@@ -70,11 +66,9 @@
                             function(data,status, jqXHR){
                                 // TODO: show personal playlist after successful login
                                 window.alert("login: "+data.login);
-
+                                
                                 var login  = data.login;
                                 playlist = data.playlist;
-                                var tempList = new Array();
-                                var tempVar = "";
 
                                 if(login == 'ok') {
                                     console.log("login ok")
