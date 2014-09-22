@@ -13,7 +13,7 @@ var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var mysql      = require('mysql');
-var conn 		   = ('mysql://mediaplayer@'+ process.env.OPENSHIFT_MYSQL_DB_HOST + ':' + process.env.OPENSHIFT_MYSQL_DB_PORT || 'mysql://mediaplayer@localhost/') + 'mediaplayer';
+var conn 		   = ('mysql://mediaplayer@'+ process.env.OPENSHIFT_MYSQL_DB_HOST + ':' + process.env.OPENSHIFT_MYSQL_DB_PORT +'/' || 'mysql://mediaplayer@localhost/') + 'mediaplayer';
 var connection = mysql.createConnection(conn);
 
 connection.connect();
