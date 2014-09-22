@@ -66,7 +66,7 @@
                             function(data,status, jqXHR){
                                 // TODO: show personal playlist after successful login
                                 window.alert("login: "+data.login);
-                                
+
                                 var login  = data.login;
                                 playlist = data.playlist;
 
@@ -80,7 +80,6 @@
                                     console.log("Adding song:", playlist[song].nimi + " by " + playlist[song].artisti);
                                 }
                                 myPlayer = new Mediaplayer(playlist);
-                                window.alert("This is the playlist now:" + playlist);
 
                             }, "json");
                     });
