@@ -1,10 +1,8 @@
 /* Create mediaplayer object */
 
-var Mediaplayer = function(arg1) {
+var Mediaplayer = function(playlist) {
 
 	var player = document.getElementById('player');
-	var playlist = ["Ebin tetters"];
-	playlist = arg1;
 
 	initMediaplayer();
 
@@ -38,11 +36,13 @@ var Mediaplayer = function(arg1) {
 	function showMediaplayer() {
 		var temp = [];
 		var songs = '<table><tr><th>#</th><th>Song</th><th>Duration</th></tr>'
+		var songcounter = 0;
+
 		for(var song in playlist) {
 			var audio = new Audio();
-			audio.src = playlist[song];
+			audio.src = playlist[song].linkki;
 			audio.songId = song;
-			songs += '<tr class="selectable"><td><b>' + song + '</b></td><td onclick="myPlayer.selectSong(\'' + song + '\')"">' + playlist[song] + '</td><td id="song' + song + '"></td></tr>'; 
+			songs += '<tr class="selectable"><td><b>' + song + '</b></td><td onclick="myPlayer.selectSong(\'' + song+ '\')"">' + playlist[song].artisti + " - " + playlist[song].nimi + '</td><td id="song' + song + '"></td></tr>';
 			audio.addEventListener('loadedmetadata', function() {
 				// Say something about the EventListener scope
 				var duration = this.duration;
@@ -66,7 +66,7 @@ var Mediaplayer = function(arg1) {
 				console.log("playable");
 				document.getElementById('canplay'+this.songId).innerHTML = "X";
 			});
-*/
+*/		
 		}
 		songs += '</table>';
 
@@ -79,7 +79,7 @@ var Mediaplayer = function(arg1) {
 
 	this.selectSong = function (songId) {
 		console.log("selected:", playlist[songId]);
-		player.src = playlist[songId];
+		player.src = playlist[songId].linkki;
 		player.play();
 	}
 

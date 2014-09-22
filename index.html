@@ -50,17 +50,13 @@
                                         // TODO: show initial playlist
 
                 var playlist = data.playlist;
-                var tempList = new Array();
-                var tempVar = "";
+
+
                     for(var song in playlist){
-                        tempVar = JSON.stringify(playlist[song].linkki);
-                        tempVar = tempVar.replace(/\"/g,"")
-                        tempList.push(tempVar);
+                    console.log("Adding song:", playlist[song].nimi + " by " + playlist[song].artisti);
                     }
                                     
-                    myPlayer = new Mediaplayer(tempList);
-
-                    window.alert("This is the playlist now:" + tempList);
+                    myPlayer = new Mediaplayer(playlist);
 
                 });
 
@@ -68,7 +64,6 @@
                 $("#btnLogin").click(function(){
                     var username = document.getElementById('username').value;
                     var password = CryptoJS.SHA1(document.getElementById('password').value).toString();
-                    window.alert("all good1");
                     $.post("api/login",
                             {username: username,
                             password: password},
@@ -77,7 +72,7 @@
                                 window.alert("login: "+data.login);
 
                                 var login  = data.login;
-                                var playlist = data.playlist;
+                                playlist = data.playlist;
                                 var tempList = new Array();
                                 var tempVar = "";
 
@@ -88,13 +83,10 @@
                                 console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
                                 
                                 for(var song in playlist) {
-                                    tempVar = JSON.stringify(playlist[song].linkki);
-                                    tempVar = tempVar.replace(/\"/g,"")
-                                    tempList.push(tempVar);
                                     console.log("Adding song:", playlist[song].nimi + " by " + playlist[song].artisti);
                                 }
-                                myPlayer = new Mediaplayer(tempList);
-                                window.alert("This is the playlist now:" + tempList);
+                                myPlayer = new Mediaplayer(playlist);
+                                window.alert("This is the playlist now:" + playlist);
 
                             }, "json");
                     });
