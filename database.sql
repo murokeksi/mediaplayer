@@ -6,7 +6,7 @@ CREATE TABLE kayttaja (id INT, PRIMARY KEY (id), tunnus VARCHAR(60), salasana VA
 CREATE TABLE kappale(id INT, PRIMARY KEY (id), pituus VARCHAR(16), artisti VARCHAR(20), genre VARCHAR(20), nimi VARCHAR(20), linkki VARCHAR(60));
 CREATE TABLE soittolista (kappaleid INT, kayttajaid INT, FOREIGN KEY (kappaleid) REFERENCES kappale(id), FOREIGN KEY (kayttajaid) REFERENCES kayttaja(id));
 
-INSERT INTO kayttaja VALUES(1, 'jussi', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'); //Kayttaja hashilla
+INSERT INTO kayttaja VALUES(1, 'testi', '40bd001563085fc35165329ea1ff5c5ecbdbbeef'); //Kayttaja hashilla
 
 
 INSERT INTO kappale VALUES (5, '0:50', 'matyze','nes','Rose Flats','http://opengameart.org/sites/default/files/Rose%20Flats.wav');
