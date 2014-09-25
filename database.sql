@@ -19,7 +19,8 @@ INSERT INTO soittolista VALUES(7,1);
 INSERT INTO soittolista VALUES(6,1);
 INSERT INTO soittolista VALUES(5,1);
 
-
+CREATE USER mediaplayer;
+GRANT SELECT ON mediaplayer.* TO mediaplayer;
 
 
 
